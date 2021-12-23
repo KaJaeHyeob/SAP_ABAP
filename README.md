@@ -25,12 +25,14 @@ SAP ABAP | SAP ERP
 
 ### 1) ABAP
 
- "System & Application & Products in data processing"의 약어로, 업무용 솔루션 제작 회사이다.    
- 우리가 흔히 말하는 SAP는 사실상 "SAP ERP"라는 SAP사의 ERP 제품 이름이다.    
+ "Advanced Business Application Programming"의 약어로, SAP ERP 프로그래밍 언어이다.    
+ SAP ERP 시스템에서 사용되는 프로그램을 개발하는 데에 사용된다.    
 
-### 2) ABAP Program 구조
+### 2) ABAP Program 구조    
 
- "Enterprise Resource Planning"의 약어로, 전사적 자원 관리를 의미하며, 회사의 모든 자원을 관리하는 시스템이다.    
+ Component(컴포넌트) > Package(개발 클래스) > Object(오브젝트)    
+
+ ABAP Program 구조는 위와 같이 이루어져있으며, Object(오브젝트)에는 Program, Function, Dictionary Object 등이 포함된다.    
 
 ### 3) ABAP Dictionary
 
@@ -42,10 +44,7 @@ SAP ABAP | SAP ERP
 
 ### 1) ABAP Programming 초급    
 
- 직무명으로써의 BC는 "Basis Consultant"의 약어로, SAP ERP의 관리자를 의미하며, 모든 시스템 환경을 총괄하는 역할을 맡는다.    
- 모듈명의로써의 BC는 "Basis Component"의 약어로, BC 직무를 수행하기 위한 SAP ERP 내의 코어 모듈이다.    
-
- "모듈"이라는 것은 SAP ERP 내의 주요 업무 분장에 따라 나눠놓은 프로그램 모음이라고 생각하면 이해하기 쉽다. 모듈 목록은 아래 "모듈 목록"을 참고하면 되겠다.    
+ ABAP Programming 관련해서 초급 목록을 작성하고자 한다. 아래 " 목록"을 참고하면 되겠다.    
 
 <details>
 <summary>모듈 목록</summary>
