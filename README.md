@@ -25,8 +25,7 @@ SAP ABAP | SAP ERP
 
 ### 1) ABAP
 
- "Advanced Business Application Programming"의 약어로, SAP ERP 프로그래밍 언어이다.    
- SAP ERP 시스템에서 사용되는 프로그램을 개발하는 데에 사용된다.    
+ "Advanced Business Application Programming"의 약어로, SAP ERP 시스템에서 사용하는 프로그래밍 언어이다.    
 
 ### 2) ABAP Program 구조    
 
@@ -36,7 +35,18 @@ SAP ABAP | SAP ERP
 
 ### 3) ABAP Dictionary
 
- "Enterprise Resource Planning"의 약어로, 전사적 자원 관리를 의미하며, 회사의 모든 자원을 관리하는 시스템이다.    
+ SAP ERP의 ABAP Dictionary는 3가지 대분류와 7가지 소분류를 사용하여 Dictionary Object를 구분시킨다.    
+ 분류 항목은 아래와 같으며, T-code SE11에서 각 분류 항목으로 나눠진 Object를 조회할 수 있다.    
+ 
+ - Database Object : Database Table, View    
+ - Type Definition : Data Type, Type Group    
+ - ABAP Tools : Domain, Search Help, Lock Object    
+
+ 7가지 소분류에 대한 정의는 아래와 같다.    
+
+ - Database Table : DB 내에 실제로 저장되어 있는 물리 데이터    
+ - View : 하나 이상의 Database Table로 생성한 논리 데이터    
+ - Data Type : 
 
 -----
 
@@ -44,10 +54,10 @@ SAP ABAP | SAP ERP
 
 ### 1) ABAP Programming 초급    
 
- ABAP Programming 관련해서 초급 목록을 작성하고자 한다. 아래 " 목록"을 참고하면 되겠다.    
+ ABAP Programming 관련 초급 메뉴얼 목록을 작성하고자 한다. 아래 "목록"을 참고하면 되겠다.    
 
 <details>
-<summary>모듈 목록</summary>
+<summary>목록</summary>
 <div markdown="1">
 
 > 코어 모듈
@@ -74,7 +84,7 @@ SAP ABAP | SAP ERP
 
 ### 2) ABAP Programming 중급    
 
-### 3) ABAP Programming 급    
+### 3) ABAP Programming 고급    
 
 
 
