@@ -56,7 +56,7 @@ SAP ABAP | SAP ERP
  
 ## 2. Data Type & Variable
  
-### 1) Data Type    
+### 1) Data Type 종류    
  
  ABAP Program 내에서 사용할 Variable(변수)의 타입을 정의하기 위해 사용한다. 아래와 같이 크게 3가지로 분류된다.    
 
@@ -71,13 +71,13 @@ SAP ABAP | SAP ERP
 ```ABAP
 ** Predefined ABAP Types 참조 변수 선언
 DATA : 
-  int TYPE I,
-  float TYPE F,
-  pack TYPE P DECIMALS 4,
+  int TYPE I VALUE 123, " VALUE 구문은 초기값 설정
+  float TYPE F, " F 타입의 경우 반올림 오류가 발생하므로, 실수는 일반적으로 P 타입 사용
+  pack TYPE P DECIMALS 4, " DECIMALS 구문은 P 타입에서만 사용 가능하며, 최대 14 자리수의 소수점 설정
   time TYPE T,
   text1 TYPE C,
   text2(2) TYPE C,
-  text3 TYPE C LENGTH 4,
+  text3 TYPE C LENGTH 4, " LENGTH 구문은 C, N, X, P 타입에서만 사용 가능하며, 길이 설정
   ltext TYPE string.
 
 ** Local Types in Programs 참조 변수 선언
@@ -85,12 +85,12 @@ DATA :
 TYPES : 
   BEGIN OF struct,
     num1 TYPE I,
-    num2 TYPE P DECIMALS 2,
+    num2 TYPE F,
   END OF struct.
 * 변수 선언
 DATA : 
-  gs_struct TYPE struct,
-  gv_num1 LIKE gs_struct-num1.
+  gs_struct TYPE struct, " TYPE 구문 뒤엔 Type명
+  gv_num1 LIKE gs_struct-num1. " LIKE 구문 뒤엔 이미 Type 할당된 Object명
 
 ** Types in the ABAP Dictionary 참조 변수 선언
 DATA : 
@@ -104,13 +104,63 @@ DATA :
  - 두 번째 글자(타입) : V(단일 변수) / S(구조체 변수) / T(테이블 변수) / R(범위 변수) / C(상수) / O(클래스)
  - 세 번째 글자(구분자) : _
  - 나머지 글자 : 의미 요약
+ 
+-----
+ 
+## 3. 연산 및 출력
+ 
+### 1) 산술 연산
+ 
+ ABAP Program에서 쓰이는 산술 연산은 아래와 같다.
+ 
+```ABAP
+num_sum = num1 + num2. " 더하기
+ADD num2 TO num1. " 더하기
+num_substract = num1 - num2. " 빼기
+SUBSTRACT num2 FROM num1. " 빼기
+num_multiply = num1 * num2. " 곱하기
+MULTIPLY num1 BY num2. " 곱하기
+num_divide = num1 / num2. " 나누기
+DIVIDE num1 BY num2. " 나누기
+num_quotient = num1 DIV num2. " 몫
+num_remainder = num1 MOD num2. " 나머지
+num_power = num1 ** num2. " 제곱
+```
 
+### 2) 논리 연산
+ 
+ ABAP Program에서 쓰이는 논리 연산은 아래와 같다.
+ 
+```ABAP
 
+```
 
+### 3) 문자열 연산
 
+ ABAP Program에서 쓰이는 문자열 연산은 아래와 같다.
+ 
+```ABAP
 
+```
+ 
+### 4) 할당 연산
 
+ ABAP Program에서 쓰이는 문자열 연산은 아래와 같다.
+ 
+```ABAP
 
+```
+ 
+### 5) 기타 연산
+ 
+ ABAP Program에서 쓰이는 기타 연산은 아래와 같다.
+ 
+```ABAP
+
+```
+ 
+-----
+ 
 ## 2. ABAP Programming    
 
 ### 1) ABAP Programming 초급    
