@@ -64,15 +64,46 @@ SAP ABAP | SAP ERP
  - Local Types in Programs : ABAP Program 내에서 정의하여 해당 프로그램에서만 사용하는 데이터 타입으로, 여러 타입의 필드를 조합한 Structure 형태의 타입을 정의하여 사용할 수 있다.    
  - Types in the ABAP Dictionary : ABAP Dictionary에 등록되어 있는 Object의 데이터 타입으로, 모든 ABAP Program에서 사용 가능하다.    
  
-### 2) Variable(변수) 선언    
+### 2) Data Type & Variable 선언    
  
- ABAP Program 내에서 사용하는 Variable(변수) 선언은 Data Type을 참조하는 방식으로 이루어진다. 주요 구문은 아래와 같다.    
+ ABAP Program 내에서의 Variable(변수) 선언은 Data Type을 참조하는 방식으로 이루어진다. 주요 구문은 아래와 같다.    
+ 
+```ABAP
+** Predefined ABAP Types 참조 변수 선언
+DATA : 
+  int TYPE I,
+  float TYPE F,
+  pack TYPE P DECIMALS 4,
+  time TYPE T,
+  text1 TYPE C,
+  text2(2) TYPE C,
+  text3 TYPE C LENGTH 4,
+  ltext TYPE string.
 
+** Local Types in Programs 참조 변수 선언
+* Local Type 선언
+TYPES : 
+  BEGIN OF struct,
+    num1 TYPE I,
+    num2 TYPE P DECIMALS 2,
+  END OF struct.
+* 변수 선언
+DATA : 
+  gs_struct TYPE struct,
+  gv_num1 LIKE gs_struct-num1.
+
+** Types in the ABAP Dictionary 참조 변수 선언
+DATA : 
+  gv_carrid TYPE s_carr_id, " Data Element 참조 변수 선언
+  gv_connid TYPE sflight-connid. " Table Field 참조 변수 선언
 ```
-
-
-
-
+ 
+ 변수명 길이는 최대 30자이며, 네이밍 룰은 아래와 같다.    
+ 
+ - 첫 번째 글자(범위) : G(글로벌 변수) / L(로컬 변수)
+ - 두 번째 글자(타입) : V(단일 변수) / S(구조체 변수) / T(테이블 변수) / R(범위 변수) / C(상수) / O(클래스)
+ - 세 번째 글자(구분자) : _
+ - 나머지 글자 : 의미 요약
 
 
 
