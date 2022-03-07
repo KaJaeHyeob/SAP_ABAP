@@ -18,9 +18,9 @@ SAP ABAP | SAP ERP
 
 </div>
 </details>
-
+ 
 -----
-
+ 
 ## 1. ABAP란?
 
 ### 1) ABAP
@@ -46,9 +46,39 @@ SAP ABAP | SAP ERP
 
  - Database Table : DB 내에 실제로 저장되어 있는 물리 데이터    
  - View : 하나 이상의 Database Table로 생성한 논리 데이터    
- - Data Type : 
-
+ - Data Type : 프로그램에서 사용할 수 있도록 정의된 데이터 타입    
+ - Type Group : 데이터 타입을 모아둔 그룹    
+ - Domain : Data Element에 할당되어 사용되는 기술적 속성 정의    
+ - Search Help :     
+ - Lock Object :     
+ 
 -----
+ 
+## 2. Data Type & Variable
+ 
+### 1) Data Type    
+ 
+ ABAP Program 내에서 사용할 Variable(변수)의 타입을 정의하기 위해 사용한다. 아래와 같이 크게 3가지로 분류된다.    
+
+ - Predefined ABAP Types : SAP 커널 레벨에 정의되어 있는 데이터 타입으로, C(문자), D(날짜), F(지수형 실수), I(정수), N(자연수), P(소수형 실수), T(시간), X(십육진수) 등이 존재한다.    
+ - Local Types in Programs : ABAP Program 내에서 정의하여 해당 프로그램에서만 사용하는 데이터 타입으로, 여러 타입의 필드를 조합한 Structure 형태의 타입을 정의하여 사용할 수 있다.    
+ - Types in the ABAP Dictionary : ABAP Dictionary에 등록되어 있는 Object의 데이터 타입으로, 모든 ABAP Program에서 사용 가능하다.    
+ 
+### 2) Variable(변수) 선언    
+ 
+ ABAP Program 내에서 사용하는 Variable(변수) 선언은 Data Type을 참조하는 방식으로 이루어진다. 주요 구문은 아래와 같다.    
+
+```
+
+
+
+
+
+
+
+
+
+
 
 ## 2. ABAP Programming    
 
