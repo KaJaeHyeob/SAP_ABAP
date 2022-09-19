@@ -49,8 +49,8 @@ SAP ABAP | SAP ERP
  - Data Type : 프로그램에서 사용할 수 있도록 정의된 데이터 타입    
  - Type Group : 데이터 타입을 모아둔 그룹    
  - Domain : Data Element에 할당되어 사용되는 기술적 속성 정의    
- - Search Help :     
- - Lock Object :     
+ - Search Help : Table Field 입력값에 대한 Possible Entry 정의    
+ - Lock Object : 중복 수정 방지를 위한 Table Lock 정의    
  
 -----
  
