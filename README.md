@@ -76,8 +76,8 @@ DATA :
   pack TYPE P DECIMALS 4, " DECIMALS 구문은 P 타입에서만 사용 가능하며, 최대 14 자리수의 소수점 설정
   time TYPE T,
   text1 TYPE C,
-  text2(2) TYPE C,
-  text3 TYPE C LENGTH 4, " LENGTH 구문은 C, N, X, P 타입에서만 사용 가능하며, 길이 설정
+  text2 TYPE C LENGTH 4, " LENGTH 구문은 C, N, X, P 타입에서만 사용 가능하며, 길이 설정
+  text3(2) TYPE C, " 괄호 사용한 길이 설정
   ltext TYPE string.
 
 ** Local Types in Programs 참조 변수 선언
@@ -140,7 +140,25 @@ num_power = num1 ** num2. " 제곱
  ABAP Program에서 쓰이는 문자열 연산은 아래와 같다.
  
 ```ABAP
-
+DATA : 
+  lv_str TYPE string VALUE '토마토 스위스 인도인 별똥별',
+  lv_size TYPE i,
+  lv_cnt TYPE i,
+  lv_offset TYPE i,
+  lv_first TYPE string,
+  lv_second TYPE string.
+lv_size = strlen( lv_str ). " 문자열 길이 반환 : 15
+FIND ALL OCCURRENCES OF '토' IN lv_str MATCH COUNT lv_cnt. " 문자열 일치하는 개수 반환 : 2
+FIND '마' IN lv_str MATCH OFFSET lv_offset. " 문자열 일치하는 위치 반환 : 1
+REPLACE '토' IN lv_str WITH '도'. " 처음으로 일치하는 문자열 변환 : '도마토 스위스 인도인 별똥별'
+REPLACE ALL OCCURRENCES OF '도' IN lv_str WITH 'Do' REPLACEMENT COUNT lv_cnt. " 일치하는 모든 문자열 변환 및 개수 반환 : 'Do마토 스위스 인Do인 별똥별' 2
+TRANSLATE lv_str TO UPPER CASE. " 모두 대문자로 변환 : 'DO마토 스위스 인DO인 별똥별'
+TRANSLATE lv_str TO LOWER CASE. " 모두 소문자로 변환 : 'do마토 스위스 인do인 별똥별'
+CONCATENATE ' 기러기 ' lv_str INTO lv_str. " 각 문자열 끝의 공백 무시하고 문자열 합치기 : ' 기러기do마토 스위스 인do인 별똥별'
+CONCATENATE lv_str ' 우 ' '영우' INTO lv_str RESPECTING BLANKS. " 각 문자열 끝의 공백 포함하여 문자열 합치기 : ' 기러기do마토 스위스 인do인 별똥별 우 영우'
+CONCATENATE lv_str '역삼역' '' INTO lv_str SEPARATED BY ', '. " 구분자 사용하여 문자열 합치기 : ' 기러기do마토 스위스 인do인 별똥별 우 영우, 역삼역, '
+CONDENSE lv_str. " 문자열 좌우 공백 제거 : '기러기do마토 스위스 인do인 별똥별 우 영우, 역삼역,'
+lv_str = lv_str+4(25). " 위치 및 길이에 해당하는 문자열 슬라이스 반환 : 'o마토 스위스 인do인 별똥별 우 영우, 역삼'
 ```
  
 ### 4) 할당 연산
